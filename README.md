@@ -47,6 +47,8 @@ La stratégie pour le CI/CD est la suivante :
 
 [Figma](https://www.figma.com/file/XkS1VKYOxJyN6BOHGmfFOh/Untitled?node-id=1-2&t=RyagLxogpSOZxuxT-0)
 
+[Backlog](https://github.com/users/rs-4/projects/1)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
