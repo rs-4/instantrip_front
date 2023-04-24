@@ -28,9 +28,8 @@ Les outils utilisés pour le développement des produits sont les suivants :
 
 La stratégie pour le CI/CD est la suivante :
 
-- {stratégie 1}
-- {stratégie 2}
-- {stratégie 3}
+- Tests unitaires
+- Push si ok
 
 ## Repartition des tâches 
 
@@ -41,7 +40,7 @@ La stratégie pour le CI/CD est la suivante :
 - Ines: Front
 - Bastien: Fullstack
 
-#Links
+# Links
 
 [Cahier des charges](https://docs.google.com/document/d/1cx1s6dJotfLgftOokWWMgpriYZ9zLK5SFQH2SjnwngQ/edit?hl=fr#)
 
