@@ -12,9 +12,10 @@ Le type de produits à développer sera un site WEB
 
 ## Fonctionnalités attendues pour le 20/05
 
-- Création de compte
+- Création de compte (register et login page)
+- L'utilisateur peut choisir son budget ainsi que ses dates disponibles
 - Proposition de voyage selon les critères données
-- Réservation
+- L'utilisateur peur réserver le voyage souhaité
 
 ## Outils utilisés
 
@@ -31,7 +32,7 @@ La stratégie pour le CI/CD est la suivante :
 - Tests unitaires
 - Push si ok
 
-## Repartition des tâches 
+## Répartition des tâches 
 
 - Rayan: Front
 - Matteo: Back
