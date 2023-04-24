@@ -1,8 +1,53 @@
-# Getting Started with Create React App
+# Présentation courte du projet
+
+## Informations générales
+
+Ce fichier sert à donner des informations sur le projet de l'entreprise InstanTrip et les outils utilisés pour le développement des produits.
+
+## InstanTrip
+
+## Type de produits à développer
+
+Le type de produits à développer sera un site WEB
+
+## Fonctionnalités attendues pour le 20/05
+
+- Création de compte
+- Proposition de voyage selon les critères données
+- Réservation
+
+## Outils utilisés
+
+Les outils utilisés pour le développement des produits sont les suivants :
+
+- Front: React JS
+- Back: Express JS
+- API: Amadeus (pour les billets d’avions et d’hôtel), Stripe
+
+## Stratégie pour le CI/CD
+
+La stratégie pour le CI/CD est la suivante :
+
+- {stratégie 1}
+- {stratégie 2}
+- {stratégie 3}
+
+## Repartition des tâches 
+
+- Rayan: Front
+- Matteo: Back
+- Bilel: Fullstack
+- Malik: Front
+- Ines: Front
+- Bastien: Fullstack
+
+#Links
 
 [Cahier des charges](https://docs.google.com/document/d/1cx1s6dJotfLgftOokWWMgpriYZ9zLK5SFQH2SjnwngQ/edit?hl=fr#)
 
 [Figma](https://www.figma.com/file/XkS1VKYOxJyN6BOHGmfFOh/Untitled?node-id=1-2&t=RyagLxogpSOZxuxT-0)
+
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
