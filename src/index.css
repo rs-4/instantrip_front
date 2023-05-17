@@ -15,3 +15,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Sofia-pro';
+  src: url('./assets/fonts/sofiapro-light.otf');
+}
