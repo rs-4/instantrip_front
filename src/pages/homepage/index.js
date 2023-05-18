@@ -1,7 +1,30 @@
 import React from 'react'
 import FeatureCard from '../../components/global/features'
+import { useState } from 'react';
+import Input from '../../components/global/input';
+import axios from 'axios';
+
 
 function HomePage() {
+  const [formData, setFormData] = useState({
+    prix: '',
+    cityDepart: '',
+    date_depart: '',
+    date_return: '',
+  });
+
+
+const handleClick  = async () => {
+  localStorage.setItem("formData",JSON.stringify(formData))
+  window.location.href = "/result"
+}
+
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+
   return (
     <>
   <div className="container font-poppins mx-auto p-8">
@@ -12,38 +35,47 @@ composition et la mise en page avant impression. Le Lorem Ipsum </h2>
       <form className="mb-8 my-20">
         <div className="flex flex-wrap -mx-2">
           <div className="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
-            <input
-              type="text"
-              className="bg-[#D9D9D9] w-full px-4 py-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-              placeholder="Budgets"
-            />
+          <Input
+                type="number"
+                placeholder="Budgets"
+                name="prix"
+                value={formData.prix} onChange={(e) => handleChange(e)}
+              />
           </div>
           <div className="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
-            <input
-              type="text"
-              className="bg-[#D9D9D9]  w-full px-4 py-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-              placeholder="Ville de départ"
-            />
+          <Input
+                type="text"
+                placeholder="Ville de départ"
+                name="cityDepart"
+                value={formData.cityDepart}
+                onChange={(e) => handleChange(e)}
+              />
           </div>
           <div className="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
-            <input
-              type="text"
-              className="bg-[#D9D9D9] w-full px-4 py-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-              placeholder="Date de départ"
-            />
+          <Input
+                type="date"
+                placeholder="Date de départ"
+                name="date_depart"
+                value={formData.date_depart}
+                onChange={(e) => handleChange(e)}
+              />
           </div>
           <div className="w-full md:w-1/2 lg:w-1/4 px-2 mb-4 ">
-            <input
-              type="text"
-              className=" bg-[#D9D9D9]  w-full px-4 py-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-              placeholder="Date de retour"
-            />
+          <Input
+                type="date"
+                placeholder="Date de retour"
+                name="date_return"
+                value={formData.date_return}
+                onChange={(e) => handleChange(e)}
+              />
           </div>
         </div>
 
-        <button
+        <div
           type="button"
+          onClick={handleClick}
           className="flex items-center justify-center bg-orange-500 text-white py-2 px-4 rounded-md"
+          style={{cursor:"pointer"}}
         >
           <svg
             className="w-5 h-5 mr-2"
@@ -52,7 +84,7 @@ composition et la mise en page avant impression. Le Lorem Ipsum </h2>
             <path fill="currentColor" d="M17.5 14l5 5L22 21.5l-5-5-5 5L9.5 19l5-5-5-5L12 9.5l5 5zM7 2H3v4h4V2zm2 0v4h4V2H9zm0 6H7v4h4V8zm0 6H7v4h4v-4zm6-12h-4v4h4V2zm0 6h-4v4h4V8zm0 6h-4v4h4v-4z" />
           </svg>
           Search
-        </button>
+        </div>
       </form>
 
       <h1 className="text-3xl my-10  mb-4">Voici quelques propositions :</h1>
