@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const Index = () => {
     const [responseData, setResponseData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
 
   useEffect(() => {
     const storedFormData = localStorage.getItem('formData');
@@ -27,11 +29,22 @@ const Index = () => {
     // Logic for reserving the flight goes here
     console.log(`Flight ${flightId} is reserved.`);
   }
+    const nextPage = () => {
+        setCurrentPage(currentPage + 1);
+    };
+
+    const previousPage = () => {
+        setCurrentPage(currentPage - 1);
+    };
+
+    const currentItems = responseData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  
 
   return (
     <div className="min-h-screen py-8">
     <div className="container mx-auto grid grid-cols-1 sm:grid-cols-1 gap-8 px-4">
-      {responseData.map((data, index) => (
+        
+      {currentItems.map((data, index) => (
         <div key={index} className="bg-[#D9D9D9] rounded-lg shadow-md p-6 flex flex-col justify-between items-center">
           <div className="flex flex-row justify-between items-center w-full">
             <img src={data.thumbnail} alt="Thumbnail" className="w-32 h-32  object-cover mr-4"/>
@@ -77,6 +90,22 @@ const Index = () => {
           </div>
         </div>
       ))}
+       <div className="flex justify-center mt-8">
+                    {currentPage > 1 && 
+                        <button 
+                            onClick={previousPage}
+                            className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded mx-2"
+                        >
+                            Previous
+                        </button>}
+                    {(currentPage - 1) * itemsPerPage + currentItems.length < responseData.length && 
+                        <button 
+                            onClick={nextPage}
+                            className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded mx-2"
+                        >
+                            Next
+                        </button>}
+                </div>
     </div>
   </div>
   );
