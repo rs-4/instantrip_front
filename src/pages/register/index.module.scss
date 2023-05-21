@@ -1,0 +1,64 @@
+.all_register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        font-size: 25px;
+        padding-bottom: 40px;
+        font-weight: 500;
+        color: #faa656;
+    }
+    .all_the_input {
+        display: flex;
+        flex-direction: column;
+    }
+    .first_inputs {
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        input {
+            width: 240px;
+        }
+    }
+    input {
+        background-color: #fff2e6;
+        width: 300px;
+        margin-bottom: 20px;
+        padding: 12px 15px;
+        border-radius: 18px;
+        background-size: 18px;
+        background-repeat: no-repeat, no-repeat;
+        background-position: left center;
+        background-position-x: 15px;
+        padding-left: 40px;
+        animation: none;
+        border: none;
+        outline: none;
+        &:focus {
+            border: none;
+            animation: none;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .user {
+        background-image: url('../../img/profile.png');
+    }
+    .password {
+        background-image: url('../../img/cadenas.png');
+    }
+    .email {
+        background-image: url('../../img/email.png');
+    }
+    .tel {
+        background-image: url('../../img/telephone.png');
+    }
+    .address {
+        background-image: url('../../img/epingle.png');
+    }
+}

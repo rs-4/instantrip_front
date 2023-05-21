@@ -1,6 +1,9 @@
 import React from 'react';
 
 const NavbarTop = () => {
+  const handleClick = async () => {
+    window.location.href = '/auth/login';
+  };
   return (
     <div className="flex items-center justify-between border-b h-24 bg-secondary">
       <div className="flex items-center w-fit">
@@ -25,7 +28,7 @@ const NavbarTop = () => {
         </p>
       </div>
       <div className="flex justify-center items-center w-fit mr-4">
-        <div className="flex justify-center items-center w-fit md:w-[160px] md:h-[40px] md:mr-6 h-fit py-2 px-6 md:px-4 rounded-2xl cursor-pointer bg-quaternary hover:bg-tertiary ">
+        <div onClick={handleClick} className="flex justify-center items-center w-fit md:w-[160px] md:h-[40px] md:mr-6 h-fit py-2 px-6 md:px-4 rounded-2xl cursor-pointer bg-quaternary hover:bg-tertiary ">
           <svg
             className="w-4 h-4 md:w-6 md:h-6"
             viewBox="0 0 31 30"

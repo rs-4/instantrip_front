@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import styles from './index.module.scss';
 
 const Index = () => {
 
@@ -32,49 +33,56 @@ const Index = () => {
         });
     }
     return (
-        <div>
+        <div className={styles.all_register}>
+            <h1>INSCRIPTION</h1>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Nom:</label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={userForm.lastName}
-                        onChange={(e) => handleChange(e)}
-                        required
-                    />
+                <div className={styles.first_inputs}>
+                    <div>
+                        <div className={styles.all_the_input}>
+                            <label>Nom:</label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                value={userForm.lastName}
+                                onChange={(e) => handleChange(e)}
+                                required
+                            />
+                        </div>
+                        <div className={styles.all_the_input}>
+                            <label>Prénom:</label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                value={userForm.firstName}
+                                onChange={(e) => handleChange(e)}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <div className={styles.all_the_input}>
+                            <label>Email:</label>
+                            <input
+                                type="email"
+                                name="email"
+                                value={userForm.email}
+                                onChange={(e) => handleChange(e)}
+                                required
+                            />
+                        </div>
+                        <div className={styles.all_the_input}>
+                            <label>Mot de passe:</label>
+                            <input
+                                type="password"
+                                name="password"
+                                value={userForm.password}
+                                onChange={(e) => handleChange(e)}
+                                required
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label>Prénom:</label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={userForm.firstName}
-                        onChange={(e) => handleChange(e)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={userForm.email}
-                        onChange={(e) => handleChange(e)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Mot de passe:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={userForm.password}
-                        onChange={(e) => handleChange(e)}
-                        required
-                    />
-                </div>
-                <div>
+                <div className={styles.all_the_input}>
                     <label>Téléphone:</label>
                     <input
                         type="number"
@@ -84,7 +92,7 @@ const Index = () => {
                         required
                     />
                 </div>
-                <button type="submit">Se connecter</button>
+                <button type="submit">S'inscrire</button>
             </form>
         </div>
     );
