@@ -1,6 +1,6 @@
 import React from 'react';
 import FeatureCard from '../../components/global/features';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Input from '../../components/global/input';
 import Layout from '../../assets/images/layout.png';
 import FooterFeats from '../../components/global/footerFeat';
@@ -10,9 +10,12 @@ import Feat2 from '../../assets/images/feat2.png';
 import Feat3 from '../../assets/images/feat3.png';
 import Feat4 from '../../assets/images/feat4.png';
 import Footer from '../../components/global/footer';
+import UserContext from "./../../context/UserContext";
 import './App.css';
 
 function HomePage() {
+  const { user } = useContext(UserContext);
+
   const [formData, setFormData] = useState({
     prix: '',
     cityDepart: '',
@@ -20,6 +23,9 @@ function HomePage() {
     date_return: ''
   });
 
+  useEffect(() => {
+    console.log(user, "CONTEXTTTTT");
+  }, []);
   const handleClick = async () => {
     localStorage.setItem('formData', JSON.stringify(formData));
     window.location.href = '/result';
