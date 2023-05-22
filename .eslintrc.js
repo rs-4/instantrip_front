@@ -13,6 +13,11 @@ module.exports = {
       "sourceType": "module"
     },
     "plugins": ["react"],
-    "rules": {}
+    "rules": {
+      "react/prop-types": "off",
+      "no-unused-vars": "off", 
+      "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": "off"
+    }
   };
   

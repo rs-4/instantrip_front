@@ -14,7 +14,7 @@ const Index = () => {
 
       // Send the form data to the API
       axios
-        .post('http://localhost:8001/api/fligth/filter', parsedFormData)
+        .post('https://instantrip.onrender.com/api/flight/filter', parsedFormData)
         .then(response => {
           console.log(response.data);
           setResponseData(response.data);
