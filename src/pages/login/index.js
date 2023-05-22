@@ -1,9 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import styles from './index.module.scss';
-import { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+import UserContext from "./../../context/UserContext";
+import { useState, useEffect, useContext } from 'react';
 
 const Index = () => {
+    const { login } = useContext(UserContext);
+
     const [userForm, setUserForm] = useState({
         email: '',
         password: '',
@@ -17,11 +21,17 @@ const Index = () => {
         console.log(userForm)
       };
     
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         axios
         .post('http://localhost:8001/api/auth/login', userForm)
         .then(response => {
-          console.log(response);
+          console.log(response.data);
+          if(response.data.success == true) {
+            Cookies.set('token_cookie', response.data.token);
+            login();
+            window.location.href = '/';
+          }
           //setResponseData(response.data);
           // Process the response from the API
         })
@@ -33,7 +43,7 @@ const Index = () => {
     return (
         <div className={styles.all_login}>
             <h1>CONNEXION</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e)=>handleSubmit(e)}>
                 <div>
                     <input
                         className={styles.email}
