@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import { useState } from 'react';
+import styles from './index.module.scss';
+import { useState, useEffect } from 'react';
 
 const Index = () => {
     const [userForm, setUserForm] = useState({
         email: '',
         password: '',
       });
-
+    
     const handleChange = (e) => {
         setUserForm({
           ...userForm,
@@ -20,7 +21,7 @@ const Index = () => {
         axios
         .post('http://localhost:8001/api/auth/login', userForm)
         .then(response => {
-          console.log(response.data);
+          console.log(response);
           //setResponseData(response.data);
           // Process the response from the API
         })
@@ -30,11 +31,12 @@ const Index = () => {
     }
     
     return (
-        <div>
+        <div className={styles.all_login}>
+            <h1>CONNEXION</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Email:</label>
                     <input
+                        className={styles.email}
                         type="email"
                         name="email"
                         value={userForm.email}
@@ -43,8 +45,8 @@ const Index = () => {
                     />
                 </div>
                 <div>
-                    <label>Mot de passe:</label>
                     <input
+                        className={styles.password}
                         type="password"
                         name="password"
                         value={userForm.password}
