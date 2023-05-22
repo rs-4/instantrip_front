@@ -2,7 +2,6 @@ import React from 'react';
 import FeatureCard from '../../components/global/features';
 import { useState } from 'react';
 import Input from '../../components/global/input';
-import axios from 'axios';
 import Layout from '../../assets/images/layout.png';
 import FooterFeats from '../../components/global/footerFeat';
 import ImageTextComponent from '../../components/global/image';
